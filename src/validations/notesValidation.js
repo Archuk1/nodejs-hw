@@ -20,7 +20,7 @@ export const createNoteSchema = {
 };
 
 const objectIdValidator = (value, helpers) => {
-  return !isValidObjectId(value) ? helpers.message('Invalid id format') : value;
+  return !isValidObjectId(value) ? helpers.message('Invalid MongoDB ObjectId') : value;
 };
 
 export const noteIdSchema = {
@@ -36,6 +36,6 @@ export const updateNoteSchema = {
   [Segments.BODY]: Joi.object({
     title: Joi.string().min(1),
     content: Joi.string().allow('').trim(),
-    tag: Joi.valid(...TAGS)
+    tag: Joi.string().valid(...TAGS)
   }).min(1)
 };
