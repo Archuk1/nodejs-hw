@@ -15,7 +15,7 @@ export const createNoteSchema = {
   [Segments.BODY]: Joi.object({
     title: Joi.string().min(1).required(),
     content: Joi.string().allow('').trim(),
-    tag: Joi.valid(...TAGS)
+    tag: Joi.string().valid(...TAGS)
   })
 };
 
