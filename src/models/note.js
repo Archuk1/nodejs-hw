@@ -20,6 +20,11 @@ const noteSchema = new mongoose.Schema(
       ],
       default: "Todo",
     },
+    userId: {
+      type: Object,
+      required: true,
+      ref: 'User'
+    } 
   },
   {
     timestamps: true,
