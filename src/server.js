@@ -21,9 +21,9 @@ app.use(cookieParser());
 app.use(authRoutes);
 app.use(notesRouters);
 
-app.use(errors());
-
 app.use(notFoundHandler);
+
+app.use(errors());
 
 app.use(errorHandler);
 
