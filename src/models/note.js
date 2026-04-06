@@ -21,7 +21,7 @@ const noteSchema = new mongoose.Schema(
       default: "Todo",
     },
     userId: {
-      type: Object,
+      type: mongoose.Schema.Types.ObjectId,
       required: true,
       ref: 'User'
     } 
